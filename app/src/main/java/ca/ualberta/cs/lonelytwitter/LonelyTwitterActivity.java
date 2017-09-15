@@ -1,14 +1,5 @@
 package ca.ualberta.cs.lonelytwitter;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Date;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -17,6 +8,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -40,7 +40,24 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
+
+				Tweet tweet = new ImportantTweet("");
+                Tweet tweet1 = new NormalTweet("Hi");
+
+                try {
+					tweet.setMessage("Hello");
+				} catch (TweetTooLongException e) {
+				}
+
+				Tweetable tweet3 = new ImportantTweet("");
+                ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
+                tweetList.add(tweet);
+                tweetList.add(tweet1);
+				//Log.d("", "The isImportant method returns " + tweet.isImportant());
+                //Log.d("", "The isImportant method returns " + tweet.isImportant());
+
+
+                //finish();
 
 			}
 		});
