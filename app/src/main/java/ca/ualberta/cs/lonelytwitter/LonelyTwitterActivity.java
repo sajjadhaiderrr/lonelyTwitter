@@ -9,18 +9,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+<<<<<<< HEAD
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+=======
+>>>>>>> 3895f9be75e6bc380ee155c921852ae04f3ac64c
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+<<<<<<< HEAD
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+=======
+import java.util.ArrayList;
+import java.util.Date;
+>>>>>>> 3895f9be75e6bc380ee155c921852ae04f3ac64c
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -57,6 +65,7 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
+<<<<<<< HEAD
 
 				tweets.add(new NormalTweet(text));
 				adapter.notifyDataSetChanged();
@@ -76,6 +85,22 @@ public class LonelyTwitterActivity extends Activity {
                 //ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
                 //tweetList.add(tweet);
                 //tweetList.add(tweet1);
+=======
+				saveInFile(text, new Date(System.currentTimeMillis()));
+
+				Tweet tweet = new ImportantTweet("");
+                Tweet tweet1 = new NormalTweet("Hi");
+
+                try {
+					tweet.setMessage("Hello");
+				} catch (TweetTooLongException e) {
+				}
+
+				Tweetable tweet3 = new ImportantTweet("");
+                ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
+                tweetList.add(tweet);
+                tweetList.add(tweet1);
+>>>>>>> 3895f9be75e6bc380ee155c921852ae04f3ac64c
 				//Log.d("", "The isImportant method returns " + tweet.isImportant());
                 //Log.d("", "The isImportant method returns " + tweet.isImportant());
 
