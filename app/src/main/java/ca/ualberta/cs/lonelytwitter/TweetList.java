@@ -24,6 +24,10 @@ public class TweetList {
         return tweets.contains(tweet);
     }
 
+    public ArrayList<Tweet> getTweets() {
+        return tweets;
+    }
+
     public void delete(Tweet tweet) {
         tweets.remove(tweet);
     }
