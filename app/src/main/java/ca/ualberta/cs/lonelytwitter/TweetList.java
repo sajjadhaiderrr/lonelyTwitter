@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class TweetList {
 
+    private int mCount;
+
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     public TweetList() {
@@ -15,6 +17,7 @@ public class TweetList {
 
     public void add(Tweet tweet) {
         tweets.add(tweet);
+        this.mCount +=1;
     }
 
     public boolean hasTweet(Tweet tweet) {
@@ -23,6 +26,10 @@ public class TweetList {
 
     public void delete(Tweet tweet) {
         tweets.remove(tweet);
+    }
+
+    public int getCount() {
+        return mCount;
     }
 
 
